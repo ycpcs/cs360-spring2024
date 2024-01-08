@@ -11,9 +11,9 @@ This page contains links to useful resources.
 
 ## Windows 10
 
-### Visual Studio 2019
+### Visual Studio 2022
 
-Download and install [Visual Studio 2019](https://visualstudio.microsoft.com) - the Community Edition is sufficient. During the installation when you are given options of features to add, select **Desktop development with C++**. You should be able to sign in with your YCP email (or create a new account using it).
+Download and install [Visual Studio 2022](https://visualstudio.microsoft.com/free-developer-offers/) - the Community Edition is sufficient. During the installation when you are given options of features to add, select **Desktop development with C++**. You should be able to sign in with your YCP email (or create a new account using it).
 
 ### CLion
 
