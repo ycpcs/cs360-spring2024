@@ -18,11 +18,11 @@ If the recursion is in the form shown above, then the recurrence can be solved d
 
 **Case 1** (recursion dominates)
 
-If
+If there exists a **constant** ε \> 0 such that
 
 > **f(n) = O(n<sup>log<sub>b</sub>a - ε</sup>)**
 
-for some **constant** ε \> 0, then the solution to the recurrence is given by
+then the solution to the recurrence is given by
 
 > **T(n) = Θ(n<sup>log<sub>b</sub>a</sup>)**
 
@@ -30,29 +30,29 @@ In this case, *f(n)* is *polynomially bounded* above by *n<sup>log<sub>b</sub>a<
 
 **Case 2** (recursion and combine are "equal")
 
-If
+If there exists a **constant** k ≥ 0 such that
 
-> **f(n) = Θ(n<sup>log<sub>b</sub>a</sup>)**
+> **f(n) = Θ(n<sup>log<sub>b</sub>a</sup> lg<sup>k</sup> n)**
 
 then the solution to the recurrence is given by
 
-> **T(n) = Θ(n<sup>log<sub>b</sub>a</sup> lg n)**
+> **T(n) = Θ(n<sup>log<sub>b</sub>a</sup> lg<sup>k+1</sup> n)**
 
-In this case, *f(n)* is "equal" to *n<sup>log<sub>b</sub>a</sup>*, i.e. neither term dominates thus the extra term to get the bound.
+In this case, *f(n)* is *polynomially equal* to *n<sup>log<sub>b</sub>a</sup>*, i.e. neither term dominates thus the extra term to get the bound.
 
 **Case 3** (combine dominates)
 
-If
+If there exists a **constant** ε \> 0 such that
 
 > **f(n) = Ω(n<sup>log<sub>b</sub>a + ε</sup>)**
 
-for some **constant** ε \> 0 **AND** if *a f(n/b)* ≤ *c f(n)* for some **constant** *c* \< 1 and *sufficiently large n* (this additional constraint is known as the *regularity condition*), then the solution to the recurrence is given by
+**AND** if *a f(n/b)* ≤ *c f(n)* for some **constant** *c* \< 1 and all *sufficiently large n* (this additional constraint is known as the *regularity condition*), then the solution to the recurrence is given by
 
 > **T(n) = Θ(f(n))**
 
 In this case, *f(n)* is *polynomially bounded* below by *n<sup>log<sub>b</sub>a</sup>* (which represents the run time of the recursive term) with the additional regularity condition, i.e. the combine term dominates the run time.
 
-Thus in all three cases it is important to compute the *recursive term run time* *n<sup>log<sub>b</sub>a</sup>* and compare it *asymptotically* to the *combine term run time f(n)* to determine which case holds. If the recursive equation satifies either case 1 or case 2, the solution can then be written by inspection. If the recursive equation satisfies case 3, then the regularity condition must be verified in order to write down the solution.
+Thus in all three cases it is important to compute the *recursive term run time* *n<sup>log<sub>b</sub>a</sup>* and compare it *asymptotically* to the *combine term run time f(n)* to determine which case holds. Often both of these terms are *polynomials*, thus it is simply a matter of comparing the *exponents* (since all polynomials are bounded by their highest order term). If the recursive equation satifies either case 1 or case 2, the solution can then be written by inspection. If the recursive equation satisfies case 3, then the regularity condition must be verified in order to write down the solution.
 
 Note: There are gaps between the cases where the theorem cannot be applied (as well as recursive equations that **do not** fit the form required by the theorem **exactly**). In these cases, other techniques must be used which will not be covered in this course (refer to [Lecture 6](lecture06.html) for details).
 
@@ -63,7 +63,7 @@ To apply the master theorem, the following procedure can be applied. Given the r
 
 > **T(n) = aT(n/b) + f(n)**
 
-1. Convert any asymptotic bounds for *f(n)* to functional notation, e.g. **Θ(n<sup>2</sup>) &rArr; cn<sup>2</sup>**
+1. Convert any asymptotic bounds for *f(n)* to functional notation by selecting a constant for the bound, e.g. **Θ(n<sup>2</sup>) &rArr; cn<sup>2</sup>**
 2. Identify **a**, **b**, and **f(n)**
 3. Compute **n<sup>log<sub>b</sub>a</sup>**
 4. Compare **f(n)** with **n<sup>log<sub>b</sub>a</sup>** to determine the proper case and write the solution to the recursive equation
@@ -194,24 +194,14 @@ Solve the recursive equation
 >
 > > **n<sup>log<sub>b</sub>a</sup> = n<sup>log<sub>2</sub>2</sup> = n<sup>1</sup> = n**
 > 
-> **4.** We see that *f(n) = nlgn ">" n* so we try to show *Case 3*, i.e.
+> **4.** We see that *f(n) = nlgn "=" n lg<sup>1</sup>n* so we can use *Case 2* where *k=1*
 >
-> > **f(n) = nlgn = Ω(n<sup>log<sub>b</sub>a + ε</sup>) = Ω(n<sup>1 + ε</sup>)**
->
-> which while *n lg n* ≥ *n* asymptotically, it is not *polynomially greater* - i.e. there is no ε that satisfies the above equation, therefore *Case 3* **does not apply** (and clearly *nlgn ≠ Θ(n)* so we are not in Case 2).
->
-> However, we can use a *generalization* of *Case 2* which states that if
->
-> > **f(n) = Θ(n<sup>log<sub>b</sub>a</sup> lg<sup>k</sup>n)** for *k ≥ 0* (note for the standard *Case 2* ⇒ *k = 0*)
+> > **f(n) = Θ(n<sup>log<sub>b</sub>a</sup> lg<sup>1</sup>n)** 
 >
 > then the solution to the recurrence is given by
 >
 > > **T(n) = Θ(n<sup>log<sub>b</sub>a</sup> lg<sup>k+1</sup>n)**
 >
-> Hence in this example
->
-> > **f(n) = nlgn = Θ(n<sup>log<sub>b</sub>a</sup> lg<sup>k</sup>n) = Θ(nlgn)** for *k = 1*
->
-> so we can give the solution as
+> So we can give the solution as
 >
 > > **T(n) = Θ(n<sup>log<sub>b</sub>a</sup> lg<sup>k+1</sup>n) = Θ(n lg<sup>2</sup>n)**
