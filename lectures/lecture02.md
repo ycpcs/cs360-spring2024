@@ -64,7 +64,7 @@ For the while loop in insertion sort, we will define an **indicator** variable *
 
 The run time for insertion sort can then be tabulated as
 
-> ![image](images/lecture02/insertgeneral.png)
+> ![image](images/lecture02/inserttable.png)
 
 We then multiply the cost per line with the number of times the line executes and add them up giving
 
