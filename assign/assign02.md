@@ -38,8 +38,7 @@ A skeleton project is provided in [CS360\_MergeSort.zip](../assign/src/CS360_Mer
 
 > -   For each input size, the program generates a *random* array **D[]**
 > -   **D[]** is copied into the array **A[]** *prior* to each sorting function call (such that each sort works on the *same* data sets)
-> -   A checking function will verify correct operation of your sorting implementation and halt the program if it produces incorrectly sorted output.
-> -   Since C++ does not have an **A.length** member variable, I have included a function called **length(A)** which will return the length of the array (which is stored in **A[0]**)
+> -   A checking function will verify if your sorting implementation produces an array that is in non-decreasing order and halt the program otherwise. Note that just because this function passes **does not** mean your algorithm is working properly. You may wish to print out the sorted array for a few small array sizes.
 > -   All arrays have been expanded by 1 (with appropriate adjustments to any loops) to agree with the pseudocode from the book where array indices range from **A[1]** -\> **A[n]**
 
 *Your Task*
@@ -50,8 +49,8 @@ The program will generate output data for 13 input sizes using increasing powers
 
 The program will run each sort for each input *size* with elements randomly generated from *two* different input *ranges* 
 
-> -   The large range contains elements in the range [1 -\> 32768]
 > -   The small range contains elements in the range [1 -\> 1024]
+> -   The large range contains elements in the range [1 -\> 32768]
 
 Once the data for all input sizes and both ranges and element ranges have been generated, the program will produce a comma separated table of output in the console and a corresponding **output.csv** file in the **bin** subdirectory. Use this data to make a *meaningful* plot (e.g. using Excel) of the data showing *important* characteristics. In particular:
 
@@ -63,31 +62,44 @@ Once the data for all input sizes and both ranges and element ranges have been g
 *Merge Sort*
 
     MERGE-SORT(A,p,r)
-    1  if p < r
-    2     q = (p+r)/2
-    3     MERGE-SORT(A,p,q)
-    4     MERGE-SORT(A,q+1,r)
-    5     MERGE(A,p,q,r)
+    1  if p ≥ r                   // base case: zero or one element
+    2     return
+    3  q = ⌊(p+r)/2⌋              // determine midpoint
+    4  MERGE-SORT(A,p,q)          // recursively sort A[p:q]
+    5  MERGE-SORT(A,q+1,r)        // recursively sort A[q+1:r]
+    6 // Merge A[p:q] and A[q+1:r] into A[p:r]
+    7  MERGE(A,p,q,r)
 
     MERGE(A,p,q,r)
-    1  n1 = q - p + 1
-    2  n2 = r - q
-    3  let L[1..n1+1] and R[1..n2+1] be new arrays
-    4  for i = 1 to n1
-    5     L[i] = A[p+i-1]
-    6  for j = 1 to n2
-    7     R[j] = A[q+j]
-    8  L[n1+1] = INF
-    9  R[n2+1] = INF
-    10 i = 1
-    11 j = 1
-    12 for k = p to r
-    13    if L[i] <= R[j]
+    1  nL = q - p + 1             // length of A[p:q]
+    2  nR = r - q                 // length of A[q+1:r]
+    3  let L[0:nL-1] and R[0:nR-1] be new arrays
+    4  for i = 0 to nL-1          // copy A[p:q] into L[0:nL-1]
+    5     L[i] = A[p+i]
+    6  for j = 0 to nR-1          // copy A[q+1:r] into R[0:nR-1]
+    7     R[j] = A[q+j+1]
+    8  i = 0                      // index smallest remaining element in L
+    9  j = 0                      // index smallest remaining element in R
+    10 k = p                      // index location to fill in A
+    11 // As long as each of the arrays L and R contains an unmerged element,
+       //    copy the smallest unmerged element back into A[p:r]
+    12 while i < nL and j < nR
+    13    if L[i] ≤ R[j]
     14       A[k] = L[i]
     15       i = i + 1
-    16    else
-    17       A[k] = R[j]
-    18       j = j + 1
+    16    else A[k] = R[j]
+    17       j = j + 1
+    18    k = k + 1
+    19 // Having gone through one of L and R entirely, copy the
+       //     remainder of the other to the end of A[p:r]
+    20 while i < nL
+    21   A[k] = L[i]
+    22   i = i + 1
+    23   k = k + 1
+    24 while j < nR
+    25   A[k] = R[j]
+    26   j = j + 1
+    27   k = k + 1
 
 **HINTS:**
 
