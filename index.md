@@ -18,6 +18,9 @@ Welcome to the website for CS 360, Analysis of Algorithms, at York College.  All
 
 ## News
 * **Jan 26** &mdash; Welcome back!
+* **Feb 5** - [Assignment 1](assign/assign01.html) Due - upload *self-graded* .pdf to Canvas by **Feb 7**
+* **Feb 14** - [Assignment 2](assign/assign02.html) Due - upload *self-graded* .pdf to Canvas by **Feb 16**
+* **Feb 16 - EXAM I. Take home due Wed, Feb 21.** Upload a **SINGLE** pdf to Canvas by 11:59pm
 
 <!--
 * **Feb 6** - [Assignment 1](assign/assign01.html) Due

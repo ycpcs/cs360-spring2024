@@ -48,7 +48,7 @@ The program will run each sort for each input *size* with elements randomly gene
 > -   The small range contains elements in the range [1 -\> 1024]
 > -   The large range contains elements in the range [1 -\> 32768]
 
-Once the data for all input sizes and both ranges and element ranges have been generated, the program will produce a comma separated table of output in the console and a corresponding **output.csv** file in the **bin** subdirectory. Use this data to make a *meaningful* plot (e.g. using Excel) of the data showing *important* characteristics. In particular:
+Once the data for all input sizes and both ranges and element ranges have been generated, the program will produce a comma separated table of output in the console and a corresponding **insertionOutput.csv** file in the **bin** subdirectory. Use this data to make a *meaningful* plot (e.g. using Excel) of the data showing *important* characteristics. In particular:
 
 > -   Plot number of inputs *n* vs. empirical average runtimes as **data points** for both element ranges
 > -   Show the *best fit* asymptotic **curves** for **cn**<sup>2</sup> appropriate for the sort. Determine an *approximate* value of **c** (to the nearest 0.5) for each element range that fits the actual data relatively well. (Hint: Simply manually choose values for each **c** and plot the corresponding asymptotic curve until it fits the data *reasonably* well, i.e. you do not need to mathematically find the "best-fit" values.)

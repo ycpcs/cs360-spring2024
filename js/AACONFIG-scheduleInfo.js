@@ -25,10 +25,6 @@ courseInfo.classPeriods = [
 		topic: new DoubleTopic("Lecture 4: Merge Sort", "lectures/lecture04.html", "Merge Sort Pseudocode", "handouts/lecture04-mergealg.pdf"),
 		reading: "Ch. 2.3",
 	},
-//	{
-//		topic: new Topic("Lecture 4: Merge Sort", "lectures/lecture04.html"),
-//		reading: "Ch. 2.3",
-//	},
 	{
 		topic: new DoubleTopic("Lecture 5: Master Theorem", "lectures/lecture05.html", "Master Theorem Reference", "handouts/lecture05-masterref.pdf"),
 		reading: "Ch. 4.5",
@@ -42,7 +38,7 @@ courseInfo.classPeriods = [
 		reading: "",
 	},
 	{
-		topic: new Topic("** Exam 1 - Takehome Due Wed Feb 22", "")
+		topic: new Topic("** Exam 1 - Takehome Due Wed Feb 21", "")
 	},
 	{
 		topic: new DoubleTopic("Lecture 7: Heapsort", "lectures/lecture07.html", "Heap Sort Pseudocode", "handouts/lecture07-heapalg.pdf"),
@@ -65,19 +61,19 @@ courseInfo.classPeriods = [
 		reading: "Ch. 15",
 	},
 	{
+		topic: new Topic("Empirical Report Workday", ""),
+		reading: "",
+	},
+	{
 		topic: new DoubleTopic("Exam 2 Review", "", "Assignment 3 Due", "assign/assign03.html"),
 		reading: "",
 	},
 	{
-		topic: new Topic("** Exam 2 - Takehome Due Wed Mar 8", "")
+		topic: new Topic("** Exam 2 - Takehome Due Mon Mar 11", "")
 	},
 	{
 		topic: new DoubleTopic("Lecture 12: Dynamic Programming - Rod Cutting cont.", "lectures/lecture12.html", "Rod Cutting Example", "handouts/lecture12-rodcutex.pdf"),
 		reading: "Ch. 15",
-	},
-	{
-		topic: new Topic("Empirical Report Workday", ""),
-		reading: "",
 	},
 	{
 		topic: new DoubleTopic("Lecture 13: Dynamic Programming - LCS", "lectures/lecture13.html", "LCS Example", "handouts/lecture13-LCSex.pdf"),
@@ -88,11 +84,11 @@ courseInfo.classPeriods = [
 		reading: "Ch. 15",
 	},
 	{
-		topic: new TripleTopic("Lecture 14: Greedy Algorithms - Activity Selection", "lectures/lecture14.html", "Activity Selection Example", "handouts/lecture14-actselex.pdf", "Empirical Comparison Report Due - Fri Mar 17", "assign/emp_comp.html"),
+		topic: new DoubleTopic("Lecture 14: Greedy Algorithms - Activity Selection", "lectures/lecture14.html", "Activity Selection Example", "handouts/lecture14-actselex.pdf"),
 		reading: "Ch. 16",
 	},
 	{
-		topic: new Topic("Lecture 15: Graph Theory", "lectures/lecture15.html"),
+		topic: new DoubleTopic("Lecture 15: Graph Theory", "lectures/lecture15.html", "Empirical Comparison Report Due - Mon Mar 18", "assign/emp_comp.html"),
 		reading: "Appendix B.4",
 	},
 	{
