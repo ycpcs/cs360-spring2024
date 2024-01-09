@@ -51,19 +51,21 @@ The key is that we can determine these positions *without comparisons*, hence th
 
 The pseudocode for the algorithm is
 
-    COUNTING-SORT(A,B,k)
-    1  let C[0..k] be a new array
+    COUNTING-SORT(A,n,k)
+    1  let B[1:n] and C[0:k] be new arrays
     2  for i = 0 to k
     3     C[i] = 0
-    4  for j = 1 to A.length
+    4  for j = 1 to n
     5     C[A[j]] = C[A[j]] + 1
     6  // C[i] now contains the number of elements equal to i
     7  for i = 1 to k
     8     C[i] = C[i] + C[i-1]
     9  // C[i] now contains the number of elements less than or equal to i
-    10 for j = A.length downto 1
-    11    B[C[A[j]]] = A[j]
-    12    C[A[j]] = C[A[j]] - 1
+    10 // Copy A to B, starting from the end of A
+    11 for j = n downto 1
+    12    B[C[A[j]]] = A[j]
+    13    C[A[j]] = C[A[j]] - 1      // to handle duplicate values
+    14 return B
 
 Intuitively the algorithm
 
@@ -91,9 +93,9 @@ Radix Sort
 
 An interesting variation on counting sort is known as *radix sort* which is useful when *k* becomes large. The sort operates by using a stable sort to sort the elements *digitwise* starting with the *least significant digit*. The number of digits *d* of a number *n* is given by *d* = log<sub>b</sub> *n* (where the base of the logarithm *b* is the *radix* of the digits, i.e. the number of values each digit can have - e.g. 10 for decimal). The pseudocode for the algorithm is
 
-    RADIX-SORT(A,d)
+    RADIX-SORT(A,n,d)
     1  for i = 1 to d
-    2     use a stable sort to sort array A[] on digit i
+    2     use a stable sort to sort array A[1:n] on digit i
 
 It can be shown that if counting sort is used for the stable sort, the run time of radix sort is Θ(*d*(*n* + *k*)) where *d* is the number of digits and *k* is the range of each digit. Radix sort is especially useful when we need to sort a large number of values that have a *constant* (usually relatively small) number of digits as it will then only require O(*n*) extra space.
 

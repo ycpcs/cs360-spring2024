@@ -41,12 +41,16 @@ A skeleton project is provided in [CS360\_InsertionSort.zip](../assign/src/CS360
 
 Implement the sort algorithm *as given in the pseudocode below* for insertion sort. Insert counter increment statements (note: a **count** global variable is provided), into each sorting function for each *executable* line of *pseudocode* (e.g. count all three lines required to implement a swap as a *single* operation). Use this counter to *empirically* measure the runtime of each sort. Only increment the counter for statements *within* the sorting functions, i.e. do not include any initialization overhead incurred in **main()** or the utility functions. Note that **count** is reset prior to each sort call but the results are stored in a 3D array **counter** which is used to display a table of all results once all the sorts and runs have completed.
 
-The program will generate output data for 13 input sizes using increasing powers of 2 from 2<sup>4</sup> = 16 to 2<sup>16</sup> = 65536. The program will also generate **\#define NUM\_AVG** sets of data for each size in order to compute an *average* runtime for random arrays of each size.
-
 The program will run each sort for each input *size* with elements randomly generated from *two* different input *ranges* 
 
 > -   The small range contains elements in the range [1 -\> 1024]
 > -   The large range contains elements in the range [1 -\> 32768]
+
+Initially the skeleton code will only run the sorting algorithm for one array of size 16 to make it easier to debug any issues. 
+
+Once you are confident that the sort code is correct, change the **\#define MAX\_RUNS** to 13 which will generate output data for 13 input sizes using increasing powers of 2 from 2<sup>4</sup> = 16 to 2<sup>16</sup> = 65536. 
+
+Also change **\#define NUM\_AVG** to 10 to compute an *average* runtime for 10 random arrays of each size.
 
 Once the data for all input sizes and both ranges and element ranges have been generated, the program will produce a comma separated table of output in the console and a corresponding **insertionOutput.csv** file in the **bin** subdirectory. Use this data to make a *meaningful* plot (e.g. using Excel) of the data showing *important* characteristics. In particular:
 
