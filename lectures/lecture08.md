@@ -12,9 +12,10 @@ Quicksort is a divide-and-conquer sorting routine (similar to merge sort) where 
 
     QUICKSORT(A,p,r)
     1  if p < r
-    2     q = PARTITION(A,p,r)
-    3     QUICKSORT(A,p,q-1)
-    4     QUICKSORT(A,q+1,r)
+    2     // Partition the subarray around the pivot, which ends up in A[q]
+    3     q = PARTITION(A,p,r)
+    4     QUICKSORT(A,p,q-1)      // recursively sort low side
+    5     QUICKSORT(A,q+1,r)      // recursively sort high side
 
 **Partitioning**
 
@@ -27,14 +28,14 @@ Note that while the pivot element is in the correct final location, the two othe
 The pseudocode for the partitioning routine is
 
     PARTITION(A,p,r)
-    1  x = A[r]
-    2  i = p - 1
-    3  for j = p to r-1
-    4     if A[j] <= x
-    5        i = i + 1
-    6        exchange A[i] with A[j]
-    7  exchange A[i+1] with A[r]
-    8  return i+1
+    1  x = A[r]                       // the pivot
+    2  i = p - 1                      // highest index into the low side
+    3  for j = p to r-1               // process each element other than the pivot
+    4     if A[j] ≤ x                 // does this element belong on the low side?
+    5        i = i + 1                // index of a new slot in the low side
+    6        exchange A[i] with A[j]  // put this element there
+    7  exchange A[i+1] with A[r]      // pivot goes just to the right of the low side
+    8  return i+1                     // new index of the pivot
 
 Since the loop runs from *p* to *r-1* (which for the initial call is 1 and *n-1*) and all other statements have constant run time, the total run time for PARTITION() is O(*n*).
 

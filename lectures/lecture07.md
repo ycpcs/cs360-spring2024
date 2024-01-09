@@ -18,10 +18,9 @@ can be viewed as heap
 
 **Heap values**
 
-We define the following values for an array *A* viewed as a heap
+We define the following values for an array *A* of length *n* viewed as a heap
 
-> -   *A.length* - size of the array
-> -   *A.heapsize* - number of elements in the heap (note *A.heapsize* ≤ *A.length*)
+> -   *A.heapsize* - number of elements in the heap (note *A.heapsize* ≤ *n*)
 > -   *height* - height of the heap binary tree = Θ(lg *n*)
 
 **Heap operations**
@@ -57,15 +56,14 @@ The MAX-HEAPIFY() routine swaps a parent node with the largest child node recurs
     MAX-HEAPIFY(A,i)
     1  l = LEFT(i)
     2  r = RIGHT(i)
-    3  if l <= A.heapsize and A[l] > A[i]
+    3  if l ≤ A.heapsize and A[l] > A[i]
     4     largest = l
-    5  else
-    6     largest = i
-    7  if r <= A.heapsize and A[r] > A[largest]
-    8     largest = r
-    9  if largest != i
-    10    exchange A[i] with A[largest]
-    11    MAX-HEAPIFY(A,largest)
+    5  else largest = i
+    6  if r ≤ A.heapsize and A[r] > A[largest]
+    7     largest = r
+    8  if largest ≠ i
+    9     exchange A[i] with A[largest]
+    10    MAX-HEAPIFY(A,largest)
 
 Lines 1-10 take constant time (i.e. are O(1)) so the worst case run time will be when the recursion occurs the maximal number of times. Since the recursion selects one of the two children to recurse down (i.e. *largest*), the worst case will happen when the most nodes are *retained* in the selected branch as shown in the following figure
 
@@ -99,11 +97,11 @@ where *h* = lg *n* is the maximum number of levels the node can traverse in the 
 
 *BUILD-MAX-HEAP()*
 
-Using MAX-HEAPIFY() we can construct a max-heap by starting with the last node that has children (which occurs at *A.length*/2) and iterating back to the root calling MAX-HEAPIFY() for each node which ensures that the max-heap property will be maintained at each step for all evaluated nodes. The pseudocode for the routine is
+Using MAX-HEAPIFY() we can construct a max-heap by starting with the last node that has children (which occurs at *n*/2) and iterating back to the root calling MAX-HEAPIFY() for each node which ensures that the max-heap property will be maintained at each step for all evaluated nodes. The pseudocode for the routine is
 
-    BUILD-MAX-HEAP(A)
-    1  A.heapsize = A.length
-    2  for i = A.length/2 downto 1
+    BUILD-MAX-HEAP(A, n)
+    1  A.heapsize = n
+    2  for i = ⌊n/2⌋ downto 1
     3     MAX-HEAPIFY(A,i)
 
 Thus since there are O(*n*) nodes with O(lg *n*) time for MAX-HEAPIFY() an upper bound for the total run time of BUILD-MAX-HEAP is
@@ -131,9 +129,9 @@ Once we have created a max-heap, to sort the elements we simply
 
 The pseudocode for heapsort is
 
-    HEAPSORT(A)
-    1  BUILD-MAX-HEAP(A)
-    2  for i = A.length downto 2
+    HEAPSORT(A, n)
+    1  BUILD-MAX-HEAP(A, n)
+    2  for i = n downto 2
     3     exchange A[1] with A[i]
     4     A.heapsize = A.heapsize - 1
     5     MAX-HEAPIFY(A,1)
@@ -149,10 +147,10 @@ Priority Queues
 
 One nice application of heaps is as a way to implement a *priority queue* (a data structure where the elements are maintained in order based on a priority value). Priority queues occur frequently in OS task scheduling so that more important tasks get priority for execution on the CPU. The priority queue will require operations to add new elements, remove the highest priority element, or adjust the priority of elements in the queue (updating the ordering accordingly). Thus a priority queue can be created (using BUILD-MAX-HEAP() and maintained efficiently as a max (or min depending on the application) heap. The priority queue operations are
 
-> -   HEAP-MAXIMUM(A) - returns the largest (highest priority) element which for a max-heap is the root - O(1)
-> -   HEAP-EXTRACT-MAX(A) - removes the root by swapping it with the last element in the queue (heap), decrements the size of the queue (heap), and calls MAX-HEAPIFY() on the new root (similar to a single step of heapsort) - O(lg *n*)
-> -   HEAP-INCREASE-KEY(A,i,key) - modify the value of node *i* to *key* and then "bubble" it up through parent nodes (maintaining the max-heap property) - O(lg *n*) since at worst it will need to traverse up the entire tree lg *n* levels
-> -   MAX-HEAP-INSERT(A, key) - add a new element by increasing the size of the queue (heap), setting the value of the new element to -∞, and calling HEAP-INCREASE-KEY() with the new value - O(lg *n*) since it takes the same time as HEAP-INCREASE-KEY()
+> -   MAX-HEAP-MAXIMUM(A) - returns the largest (highest priority) element which for a max-heap is the root - O(1)
+> -   MAX-HEAP-EXTRACT-MAX(A) - removes the root by swapping it with the last element in the queue (heap), decrements the size of the queue (heap), and calls MAX-HEAPIFY() on the new root (similar to a single step of heapsort) - O(lg *n*)
+> -   MAX-HEAP-INCREASE-KEY(A,x,k) - modify the value of node *x* to *k* and then "bubble" it up through parent nodes (maintaining the max-heap property) - O(lg *n*) since at worst it will need to traverse up the entire tree lg *n* levels
+> -   MAX-HEAP-INSERT(A, x, n) - add a new element by increasing the size of the queue (heap), setting the value of the new element to -∞, and calling HEAP-INCREASE-KEY() with the new value - O(lg *n*) since it takes the same time as HEAP-INCREASE-KEY()
 
 Thus a priority queue can be created in *linear* time and maintained in *lg* time using a heap.
 

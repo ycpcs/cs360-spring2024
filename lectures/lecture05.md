@@ -68,7 +68,7 @@ To apply the master theorem, the following procedure can be applied. Given the r
 3. Compute **n<sup>log<sub>b</sub>a</sup>**
 4. Compare **f(n)** with **n<sup>log<sub>b</sub>a</sup>** to determine the proper case and write the solution to the recursive equation
     - **Case 1** (*f(n) "<" n<sup>log<sub>b</sub>a</sup>*)**:** Give an ε to show **f(n) = O(n<sup>log<sub>b</sub>a - ε</sup>)**, then give the solution **T(n) = Θ(n<sup>log<sub>b</sub>a</sup>)**
-    - **Case 2** (*f(n) "≈" n<sup>log<sub>b</sub>a</sup>*)**:** Show **f(n) = Θ(n<sup>log<sub>b</sub>a</sup>)**, then give the solution **T(n) = Θ(n<sup>log<sub>b</sub>a</sup> lg n)**
+    - **Case 2** (*f(n) "≈" n<sup>log<sub>b</sub>a</sup>*)**:** Show **f(n) = Θ(n<sup>log<sub>b</sub>a</sup>)**, then give the solution **T(n) = Θ(n<sup>log<sub>b</sub>a</sup> lg n)** (possibly with a higher *k* term)
     - **Case 3** (*f(n) ">" n<sup>log<sub>b</sub>a</sup>*)**:** Give an ε to show **f(n) = Ω(n<sup>log<sub>b</sub>a + ε</sup>)**, **AND** show **af(n/b) ≤ cf(n)** for some *c < 1*, then give the solution **T(n) = Θ(f(n))**
 
 Examples
