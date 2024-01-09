@@ -16,15 +16,15 @@ All sorting algorithms have the property that given a set of **keys**:
 
 *Insertion Sort* accomplishes this task by looping through each element moving it into place within the preceeding elements in the array. Thus insertion sort *sorts in place*, i.e. the array can be reordered with a *constant* (regardless of input size) amount of extra storage (in this case just a single temp variable for swapping). The pseudocode for the algorithm is:
 
-    INSERTION-SORT(A)
-    1  for j = 2 to A.length
-    2     key = A[j]
-    3     // Insert A[j] into the sorted sequence A[1..j-1]
-    4     i = j - 1
-    5     while i > 0 and A[i] > key
-    6        A[i+1] = A[i]
-    7        i = i - 1
-    8     A[i+1] = key
+    INSERTION-SORT(A,n)
+    1  for i = 2 to n
+    2     key = A[i]
+    3     // Insert A[i] into the sorted subarray A[1:i-1]
+    4     j = i - 1
+    5     while j > 0 and A[j] > key
+    6        A[j+1] = A[j]
+    7        j = j - 1
+    8     A[j+1] = key
 
 **Proof of Correctness**
 
@@ -38,15 +38,15 @@ Note: This procedure is similar to an inductive proof with a base case and induc
 
 The loop invariant for insertion sort can be stated as follows:
 
-    At each step, A[1..j-1] contains the first j-1 elements in SORTED order.
+    At each step, A[1:i-1] contains the first i-1 elements in SORTED order.
 
 The proof of correctness is then straightforward:
 
-> **Initialization**: Prior to the loop *j* =2 ⇒ *A*[1.. *j*-1] = *A*[1] which contains only the *A*[1.. *j*-1] elements (of which there is only one) and since there is only a single element they are trivially sorted.
+> **Initialization**: Prior to the loop *i* =2 ⇒ *A*[1:*i*-1] = *A*[1] which contains only the *A*[1:*i*-1] elements (of which there is only one) and since there is only a single element they are trivially sorted.
 >
-> **Maintenance**: The outer **for** loop selects element *A*[ *j*] and positions it properly into *A*[1.. *j*-1] via the while loop. Since the array *A*[1.. *j*-1] began sorted, inserting element A[j] into the proper place produces *A*[1.. *j*] in sorted order (and contains the first j elements).
+> **Maintenance**: The outer **for** loop selects element *A*[*i*] and positions it properly into *A*[1:*i*-1] via the while loop. Since the array *A*[1:*i*-1] began sorted, inserting element A[*i*] into the proper place produces *A*[1:*i*] in sorted order (and contains the first *i* elements).
 >
-> **Termination**: The loop terminates when *j*= *n*+1 ⇒ *A*[1.. *j*-1] = *A*[1.. ( *n*+1)-1] = *A*[1.. *n*] which since the array remains sorted after each iteration gives *A*[1.. *n*] is sorted when the loop terminates (and contains *all* the original elements) ⇒ the entire *original* array is sorted.
+> **Termination**: The loop terminates when *i*= *n*+1 ⇒ *A*[1:*i*-1] = *A*[1:(*n*+1)-1] = *A*[1..*n*] which since the array remains sorted after each iteration gives *A*[1..*n*] is sorted when the loop terminates (and contains *all* the original elements) ⇒ the entire *original* array is sorted.
 
 **Analysis**
 
@@ -54,19 +54,19 @@ For all analysis in this course we assume that the algorithm will be implemented
 
 We will define the *input size*, *n*, to typically be the number of elements in the input set (but it could represent the number of bits in a representation or other appropriate enumeration). The *running time* will then be the total number of execution steps as a function of *n* the algorithm takes to complete. We will assume that each line of pseudocode executes in a *constant* amount of time (although that amount may vary from line to line). Thus we multiply the (constant) time each line takes to execute by the number of times the line executes to find a cost per line and then sum the costs of all lines to give the *run time* of the algorithm.
 
-For the while loop in insertion sort, we will define an **indicator** variable *w*<sub>ji</sub> defined as
-
-> ![image](images/lecture02/whileindicator.png)
-
-which will essentially "count" whether or not the inner loop body executes for inner loop iteration *i* and outer loop iteration *j*. Thus, the total number of times the while loop will execute is given by 
+For the while loop in insertion sort, we will define an **indicator** variable *t*<sub>i</sub> which will essentially "count" the number of times the *while statement* executes for outer loop iteration *i* (which is variable depending on when the while condition terminates the loop). Thus, the total number of times the while statement will execute is given by 
 
 > ![image](images/lecture02/whilesum.png)
 
-**Note:** The actual while statement on line 5 will execute one more time than the while loop body *for each* iteration of the outer loop.
+**Note:** The actual statements in the *loop body* (i.e. lines 6 an 7) will execute one *less* time than the while statement *for each* iteration of the outer loop.
 
 *General Run Time*
 
-The run time for insertion sort can then be written as
+The run time for insertion sort can then be tabulated as
+
+> ![image](images/lecture02/insertgeneral.png)
+
+We then multiply the cost per line with the number of times the line executes and add them up giving
 
 > ![image](images/lecture02/insertgeneral.png)
 
@@ -74,17 +74,17 @@ where the *c*<sub>i</sub>'s are the cost of each line (noting that *c*<sub>3</su
 
 *Case 1: Best Case*
 
-The best case for insertion sort is when the input array is already sorted, in which case the while loop body *never* executes. Thus *w*<sub>ji</sub> = 0 for all *i* and *j* giving
+The best case for insertion sort is when the input array is already sorted, in which case the while loop body *never* executes. Thus *t*<sub>i</sub> = 1 for all *i* giving (using Appendix A of CLRS to evaluate the summation)
 
 > ![image](images/lecture02/bestsum1.png)
 
-i.e. the while condition (line 5) executes *exactly once* for each iteration of the outer loop, and
+i.e. the while condition (line 5) executes the same number of times as the other statements in the outer loop. Furthermore, for the statements *inside* the while loop
 
 > ![image](images/lecture02/bestsum2.png)
 
 i.e. the statements in the while body (lines 6 and 7) *never* execute.
 
-Thus the total run time reduces to:
+Thus the total run time reduces to
 
 > ![image](images/lecture02/insertbest.png)
 
@@ -92,11 +92,11 @@ which is a *linear* function of *n*.
 
 *Case 2: Worst Case*
 
-The worst case for insertion sort is when the input array is in reverse (decreasing) sorted order, in which case the while loop executes the maximum number of times. Thus *w*<sub>ji</sub> = *1* for all *i* and *j*. Using Appendix A of CLRS, the summation terms can be reduced as follows:
+The worst case for insertion sort is when the input array is in reverse (decreasing) sorted order, in which case the key will *always* be greater than the preceding elements. Thus the while loop will terminate when *j* = 0 (since *j* is decremented from its initial value of *i-1* each iteration of the while loop) giving the maximum number of times the *while statement* will execute as (again using Appendix A of CLRS)
 
 > ![image](images/lecture02/worstsum1.png)
 
-and
+and the statements inside the loop 
 
 > ![image](images/lecture02/worstsum2.png)
 
