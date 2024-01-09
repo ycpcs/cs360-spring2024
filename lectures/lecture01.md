@@ -37,8 +37,9 @@ We will be using pseudocode for our algorithm implementations and will follow th
 > -   **//** indicates *comments*
 > -   **=** indicates *assignment* (and can be used for multiple assignment)
 > -   Variables are *local* to the procedure in which they are used
+> -   Array indicies start at **1** (**not** 0) unless explicitly specified
 > -   Array elements are accessed with *bracketed indices* as in C++/Java, e.g. A[i]
-> -   The notation ".." is used to indicate a (inclusive) *subarray*, e.g. A[i..j] indicates the elements \<A[i],A[i+1], ..., A[j]\>
+> -   The notation ":" is used to indicate a (inclusive) *subarray*, e.g. A[i:j] indicates the elements \<A[i],A[i+1], ..., A[j]\>
 > -   Object *attributes* and *methods* are accessed using the standard "." notation, e.g. A.length
 > -   Object names are treated as *pointers*, thus B = A creates an *alias* **NOT** a copy
 > -   Variables are passed *by value*, except for objects and arrays which are passed *by reference*.

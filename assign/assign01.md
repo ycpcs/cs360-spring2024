@@ -26,7 +26,7 @@ Implementation - insertion sort.
 > >
 > > (c) - What must be true both **before** and **after** the *outer* loop executes (consider what the outer loop does)? Remember you must show it holds for *initialization*, *maintenance*, and *termination* conditions.
 > >
-> > (d) - Note this version of bubble-sort uses *fixed* iteration loops, i.e. no **while** statements. Construct a table as shown in class to determine the *worst-case* runtime.
+> > (d) - Note this version of bubble-sort uses *fixed* iteration loops, i.e. no **while** statements. Construct a table as shown in class to determine the *worst-case* runtime and define a counter variable *t*<sub>*i*<\sub> for the number of times the if *condition* is true for each outer iteration *i*.
 
 **Implementation**
 
@@ -34,8 +34,7 @@ A skeleton project is provided in [CS360\_InsertionSort.zip](../assign/src/CS360
 
 > -   For each input size, the program generates a *random* array **D[]**
 > -   **D[]** is copied into the array **A[]** *prior* to each sorting function call (such that each sort works on the *same* data sets)
-> -   A checking function will verify correct operation of your sorting implementation and halt the program if it produces incorrectly sorted output.
-> -   Since C++ does not have an **A.length** member variable, I have included a function called **length(A)** which will return the length of the array (which is stored in **A[0]**)
+> -   A checking function will verify if your sorting implementation produces an array that is in non-decreasing order and halt the program otherwise. Note that just because this function passes **does not** mean your algorithm is working properly. You may wish to print out the sorted array for a few small array sizes.
 > -   All arrays have been expanded by 1 (with appropriate adjustments to any loops) to agree with the pseudocode from the book where array indices range from **A[1]** -\> **A[n]**
 
 *Your Task*
@@ -46,8 +45,8 @@ The program will generate output data for 13 input sizes using increasing powers
 
 The program will run each sort for each input *size* with elements randomly generated from *two* different input *ranges* 
 
-> -   The large range contains elements in the range [1 -\> 32768]
 > -   The small range contains elements in the range [1 -\> 1024]
+> -   The large range contains elements in the range [1 -\> 32768]
 
 Once the data for all input sizes and both ranges and element ranges have been generated, the program will produce a comma separated table of output in the console and a corresponding **output.csv** file in the **bin** subdirectory. Use this data to make a *meaningful* plot (e.g. using Excel) of the data showing *important* characteristics. In particular:
 
@@ -58,15 +57,15 @@ Once the data for all input sizes and both ranges and element ranges have been g
 
 *Insertion Sort*
 
-    INSERTION-SORT(A)
-    1  for j = 2 to A.length
-    2     key = A[j]
-    3     // Insert A[j] into the sorted sequence A[1..j-1]
-    4     i = j - 1
-    5     while i > 0 and A[i] > key
-    6        A[i+1] = A[i]
-    7        i = i - 1
-    8     A[i+1] = key
+    INSERTION-SORT(A, n)
+    1  for i = 2 to n
+    2     key = A[i]
+    3     // Insert A[i] into the sorted sequence A[1:i-1]
+    4     j = i - 1
+    5     while j > 0 and A[j] > key
+    6        A[j+1] = A[j]
+    7        j = j - 1
+    8     A[j+1] = key
 
 **HINTS:**
 
