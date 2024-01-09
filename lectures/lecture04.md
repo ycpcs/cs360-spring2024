@@ -26,31 +26,44 @@ One application of the divide and conquer approach to sorting is an algorithm kn
 The pseudocode implementation for merge sort is
 
     MERGE-SORT(A,p,r)
-    1  if p < r
-    2     q = (p+r)/2
-    3     MERGE-SORT(A,p,q)
-    4     MERGE-SORT(A,q+1,r)
-    5     MERGE(A,p,q,r)
+    1  if p ≥ r                   // base case: zero or one element
+    2     return
+    3  q = ⌊(p+r)/2⌋              // determine midpoint
+    4  MERGE-SORT(A,p,q)          // recursively sort A[p:q]
+    5  MERGE-SORT(A,q+1,r)        // recursively sort A[q+1:r]
+    6 // Merge A[p:q] and A[q+1:r] into A[p:r]
+    7  MERGE(A,p,q,r)
 
     MERGE(A,p,q,r)
-    1  n1 = q - p + 1
-    2  n2 = r - q
-    3  let L[1..n1+1] and R[1..n2+1] be new arrays
-    4  for i = 1 to n1
-    5     L[i] = A[p+i-1]
-    6  for j = 1 to n2
-    7     R[j] = A[q+j]
-    8  L[n1+1] = INF
-    9  R[n1+1] = INF
-    10 i = 1
-    11 j = 1
-    12 for k = p to r
-    13    if L[i] <= R[j]
+    1  nL = q - p + 1             // length of A[p:q]
+    2  nR = r - q                 // length of A[q+1:r]
+    3  let L[0:nL-1] and R[0:nR-1] be new arrays
+    4  for i = 0 to nL-1          // copy A[p:q] into L[0:nL-1]
+    5     L[i] = A[p+i]
+    6  for j = 0 to nR-1          // copy A[q+1:r] into R[0:nR-1]
+    7     R[j] = A[q+j+1]
+    8  i = 0                      // index smallest remaining element in L
+    9  j = 0                      // index smallest remaining element in R
+    10 k = p                      // index location to fill in A
+    11 // As long as each of the arrays L and R contains an unmerged element,
+       //    copy the smallest unmerged element back into A[p:r]
+    12 while i < nL and j < nR
+    13    if L[i] ≤ R[j]
     14       A[k] = L[i]
     15       i = i + 1
-    16    else
-    17       A[k] = R[j]
-    18       j = j + 1
+    16    else A[k] = R[j]
+    17       j = j + 1
+    18    k = k + 1
+    19 // Having gone through one of L and R entirely, copy the
+       //     remainder of the other to the end of A[p:r]
+    20 while i < nL
+    21   A[k] = L[i]
+    22   i = i + 1
+    23   k = k + 1
+    24 while j < nR
+    25   A[k] = R[j]
+    26   j = j + 1
+    27   k = k + 1
 
 **Analysis**
 
@@ -60,17 +73,17 @@ First we will examine the run time of MERGE() and then analyze the recursive MER
 
 For MERGE()
 
-> Input: *A[p..q]* and *A[q+1..r]* are sorted
+> Input: *A[p:q]* and *A[q+1:r]* are sorted
 >
-> Output: *A[p..r]* is sorted
+> Output: *A[p:r]* is sorted
 >
 > Θ(1) Lines 1-3 - compute two values and allocate memory
 >
 > Θ(n) Lines 4-7 - copy elements from *A[]* into *L[]* and *R[]*
 >
-> Θ(1) Lines 8-11 - add sentinal values and initialize loop counters
+> Θ(1) Lines 8-11 - initialize loop counters
 >
-> Θ(n) Lines 12-18 - loop from *p* to *r* placing either *L[i]* or *R[j]* into *A[k]*
+> Θ(n) Lines 12-27 - loop from *p* to *r* placing either *L[i]* or *R[j]* into *A[k]*
 
 Thus the run time for MERGE()
 
