@@ -85,6 +85,36 @@ Start at *any* entry containing the max-length (for example *c[m,n]*) and follow
 
 Alternatively we could avoid the *B* matrix (saving some space) and reconstruct the LCS from *C* at each step in O(1) time (using only the surrounding table cells), however it does not provide any improvement in the asymptotic run time.
 
+The pseudocode for this algorithm is
+
+    LCS-LENGTH(X,Y,m,n)
+    1  let b[1:m,1:n] and c[0:m,0:n] be new tables
+    2  for i = 1 to m
+    3     c[i,0] = 0
+    4  for j = 0 to n
+    5     c[0,j] = 0
+    6  for i = 1 to m           // compute table entries in row-major order
+    7     for j = 1 to n
+    8        if x<sub>i</sub> == y<sub>j</sub>
+    9           c[i,j] = c[i-1,j-1] + 1
+    10          b[i,j] = "↖"
+    11       elseif c[i-1,j] ≥ c[i,j-1]
+    12          c[i,j] = c[i-1,j]
+    13          b[i,j] = "↑"
+    14       else c[i,j] = c[i,j-1]
+    15          b[i,j] = "←"
+    16 return c and b
+    
+    PRINT-LCS(b,X,i,j)
+    1  if i==0 or j==0
+    2     return                // LCS has length 0
+    3  if b[i,j] == "↖"
+    4     PRINT-LCS(b,x,i-1,j-1)
+    5     print x<sub>i</sub>   //same as y<sub>i</sub>
+    6  elseif b[i,j] == "↑"
+    7     PRINT-LCS(b,X,i-1,j)
+    8  else PRINT-LCS(b,X,i,j-1)
+
 **Example**
 
 Consider the two sequences

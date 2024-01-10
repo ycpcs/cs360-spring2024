@@ -76,7 +76,7 @@ courseInfo.classPeriods = [
 		reading: "Ch. 15",
 	},
 	{
-		topic: new DoubleTopic("Lecture 13: Dynamic Programming - LCS", "lectures/lecture13.html", "LCS Example", "handouts/lecture13-LCSex.pdf"),
+		topic: new TripleTopic("Lecture 13: Dynamic Programming - LCS", "lectures/lecture13.html", "LCS Pseudocode", "handouts/lecture13-LCSalg.pdf", "LCS Example", "handouts/lecture13-LCSex.pdf"),
 		reading: "Ch. 15",
 	},
 	{
