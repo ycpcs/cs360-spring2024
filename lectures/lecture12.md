@@ -45,12 +45,12 @@ If we assume that we do not further cut the first piece (since there must be at 
 where we repeat the process for each subsequent *r*<sub>n-i</sub> piece. Thus we can implement this approach using a simple recursive routine
 
     CUT-ROD(p,n)
-    1.  if n == 0
-    2.     return 0
-    3.  q = -INF
-    4.  for i = 1 to n
-    5.     q = max(q,p[i] + CUT-ROD(p,n-i)
-    6.  return q
+    1  if n == 0
+    2     return 0
+    3  q = -∞
+    4  for i = 1 to n
+    5     q = max(q,p[i] + CUT-ROD(p,n-i)
+    6  return q
 
 The run time of this algorithm is given by the recursive equation
 
@@ -65,14 +65,14 @@ However if we can *store* the solutions to the smaller problems in a *bottom-up*
 Note that to compute any *r*<sub>j</sub> we only need the values *r*<sub>0</sub> to *r*<sub>j-1</sub> which we store in an array. Hence we will compute the new element using only *previously computed* values. The implementation of this approach is
 
     BOTTOM-UP-CUT-ROD(p,n)
-    1.  let r[0..n] be a new array
-    2.  r[0] = 0
-    3.  for j = 1 to n
-    4.     q = -INF
-    5.     for i = 1 to j
-    6.        q = max(q,p[i] + r[j-i])
-    7.     r[j] = q
-    8.  return r[n]
+    1  let r[0:n] be a new array        // will remember optimal solution values in r
+    2  r[0] = 0                         // base case
+    3  for j = 1 to n                   // compute for increasing rod lengths
+    4     q = -∞
+    5     for i = 1 to j                // i is the position of the first cut
+    6        q = max(q,p[i] + r[j-i])
+    7     r[j] = q                      // remember the solution value for length j
+    8  return r[n]
 
 The run time of this implementation is simply
 
@@ -81,21 +81,23 @@ The run time of this implementation is simply
 Thus we have reduced the run time from *exponential* to *polynomial*! If in addition to the maximal revenue we want to know where to make the actual cuts we simply use an additional array *s[]* (also of size *n+1*) that stores the optimal cut for each segment size. Then we proceed backwards through the cuts by examining *s[i]* = *i* - *s[i]* starting at *i* = *n* to see where each subsequent cut is made until *i* = 0 (indicating that we take the last piece without further cuts). A modified implementation that explicitly performs the maximization to include *s[]* and print the final optimal cut lengths (which still has the same O(*n*<sup>2</sup>) run time) is given below
 
     EXTENDED-BOTTOM-UP-CUT-ROD(p,n)
-    1.  let r[0..n] and s[0..n] be new arrays
-    2.  r[0] = 0
-    3.  for j = 1 to n
-    4.     q = -INF
-    5.     for i = 1 to j
-    6.        if q < p[i] + r[j-i]
-    7.           q = p[i] + r[j-i]
-    8.           s[j] = i
-    9.     r[j] = q
-    10. // Print optimal cuts
-    11. i = n 
-    12. while i > 0
-    13.    print s[i]
-    14.    i = i - s[i]
-    15. return r and s
+    1  let r[0:n] and s[1:n] be new arrays
+    2  r[0] = 0
+    3  for j = 1 to n                    // compute for increasing rod lengths
+    4     q = -∞
+    5     for i = 1 to j                 // i is the position of the first cut
+    6        if q < p[i] + r[j-i]
+    7           q = p[i] + r[j-i]
+    8           s[j] = i                 // store best cut logation so far for length j
+    9     r[j] = q                       // remember the solution value for length j
+    10 return r and s
+    
+    
+    PRINT-CUT-ROD-SOLUTION(p,n)
+    1 (r,s) = EXTENDED-BOTTOM-UP-CUT-ROD(p,n) 
+    2 while n > 0
+    3    print s[n]            // cut location for length n
+    4    n = n - s[n]          // length for the remainder of the rod
 
 **Example**
 
