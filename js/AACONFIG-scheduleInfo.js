@@ -84,7 +84,7 @@ courseInfo.classPeriods = [
 		reading: "Ch. 15",
 	},
 	{
-		topic: new DoubleTopic("Lecture 14: Greedy Algorithms - Activity Selection", "lectures/lecture14.html", "Activity Selection Example", "handouts/lecture14-actselex.pdf"),
+		topic: new TripleTopic("Lecture 14: Greedy Algorithms - Activity Selection", "lectures/lecture14.html", "Greedy Activity Selection Pseudocode", "handouts/lecture14-actselalg.pdf", "Activity Selection Example", "handouts/lecture14-actselex.pdf"),
 		reading: "Ch. 16",
 	},
 	{

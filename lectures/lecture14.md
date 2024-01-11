@@ -107,6 +107,15 @@ Thus instead of having 2 subproblems each with *n*-*j*-1 choices per problem, we
 
 Always start by choosing the first activity (since it finishes first), then repeatedly choose the next compatible activity until none remain. The algorithm can be implemented either recursively or iteratively in O(n) time (assuming the activities are sorted by finishing times) since each activity is examined only once.
 
+    GREEDY-ACTIVITY-SELECTOR(s,f,n)
+    1  A = {a1}
+    2  k = 1
+    3  for m = 2 to n
+    4     if s[m] ≥ f[k]        // is am in Sk
+    5        A = A ∪ {am}       // yes, so choose it
+    6        k = m              // and continue from there
+    7  return A
+
 **Example**
 
 Consider the following set of activities represented graphically in non-decreasing order of finishing times
