@@ -95,7 +95,7 @@ The pseudocode for this algorithm is
     5     c[0,j] = 0
     6  for i = 1 to m           // compute table entries in row-major order
     7     for j = 1 to n
-    8        if x<sub>i</sub> == y<sub>j</sub>
+    8        if xi == yj
     9           c[i,j] = c[i-1,j-1] + 1
     10          b[i,j] = "↖"
     11       elseif c[i-1,j] ≥ c[i,j-1]
@@ -110,7 +110,7 @@ The pseudocode for this algorithm is
     2     return                // LCS has length 0
     3  if b[i,j] == "↖"
     4     PRINT-LCS(b,x,i-1,j-1)
-    5     print x<sub>i</sub>   //same as y<sub>i</sub>
+    5     print xi              //same as yj
     6  elseif b[i,j] == "↑"
     7     PRINT-LCS(b,X,i-1,j)
     8  else PRINT-LCS(b,X,i,j-1)
