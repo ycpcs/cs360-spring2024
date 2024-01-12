@@ -33,6 +33,11 @@ Thus DFS can be used to test whether or not a graph has cycles on O(*V*+*E*) tim
 
 Given a *directed acyclic graph* *G* (i.e. DAG, which can be determined via DFS), running DFS on *G* and sorting the vertices by *decreasing* finishing times produces a sequential ordering of the vertices. This can be seen since for any edge (*u*,*v*) in the depth-first tree, *u* must appear *before* *v* in the sorted list (since *G* is a DAG we know there are no back edges). For example, if the vertices represent a set of tasks with edges representing dependencies between tasks, a topological sort can be used to find a *critical path*. Since DFS runs in Θ(*V* + *E*), topological sort runs in the same time.
 
+	TOPOLOGICAL-SORT(G)
+	1  call DFS(G) to compute finish times v.f for each vertex v
+	2  as each vertex is finished, insert it onto the front of a linked list
+	3  return the linked list of vertices
+
 Strongly Connected Component Decomposition (SCCD)
 =================================================
 
@@ -53,6 +58,14 @@ Thus the procedure for finding strongly connected components is as follows:
 > 3.  Run DFS on *G*<sup>T</sup> considering the vertices in *decreasing order* of *u.f*'s from step 1 ⇒ O(*V*+*E*)
 
 The resulting depth-first trees from step 3 are the strongly connected components of *G*. Furthermore, the running time of SCCD is Θ(*V*+*E*).
+
+	STRONGLY-CONNECTED-COMPONENTS(G)
+	1  call DFS(G) to compute finish times u.f for each vertex u
+	2  create GT
+	3  call DFS(GT), but in the main loop of DFS, consider the vertices
+	        in order of decreasing u.f (as computed in line 1)
+	4  output the vertices of each tree in the depth-first forest formed in line 3 as a
+	        separate strongly connected component
 
 **Example**
 
