@@ -55,25 +55,25 @@ Unlike BFS, DFS does not utilize a queue but rather recursively continues to fol
 The algorithm for depth-first search is
 
 	DFS(G)
-	1.  for each vertex u ∈ G.V
-	2.     u.color = WHITE
-	3.     u.pi = NIL
-	4.  time = 0
-	5.  for each vertex u ∈ G.V
-	6.     if u.color == WHITE
-	7.        DFS-VISIT(G,u)
+	1  for each vertex u ∈ G.V
+	2     u.color = WHITE
+	3     u.π = NIL
+	4  time = 0
+	5  for each vertex u ∈ G.V
+	6     if u.color == WHITE
+	7        DFS-VISIT(G,u)
 	
 	DFS-VISIT(G,u)
-	1.  time = time + 1
-	2.  u.d = time
-	3.  u.color = GRAY
-	4.  for each v ∈ G.Adj[u]
-	5.     if v.color == WHITE
-	6.        v.pi = u
-	7.        DFS-VISIT(G,v)
-	8.  u.color = BLACK
-	9.  time = time + 1
-	10. u.f = time
+	1  time = time + 1                 // white vertex u has just been discovered
+	2  u.d = time
+	3  u.color = GRAY
+	4  for each vertex v in G.Adj[u]   // explore each edge (u,v)
+	5     if v.color == WHITE
+	6        v.π = u
+	7        DFS-VISIT(G,v)
+	8  time = time + 1
+	9  u.f = time
+	10 u.color = BLACK                 // blacken u; it is finished
 
 Basically the algorithm performs the following operations:
 

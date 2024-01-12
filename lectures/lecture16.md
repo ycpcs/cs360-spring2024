@@ -35,24 +35,24 @@ We will employ a queue *Q* which will track which vertices are currently under d
 The algorithm for breadth-first search is
 
 	BFS(G,s)
-	1.  for each vertex u ∈ G.V - {s}
-	2.     u.color == WHITE
-	3.     u.d = ∞
-	4.     u.π = NIL
-	5.  s.color = GRAY
-	6.  s.d = 0
-	7.  s.π = NIL
-	8.  Q = ∅
-	9.  ENQUEUE(Q,s)
-	10. while Q ≠ ∅
-	11.    u = DEQUEUE(Q)
-	12.    for each vertex v in G.Adj[u]   // search the neighbors of u
-	13.       if v.color == WHITE          // is v being discovered now?
-	14.          v.color = GRAY
-	15.          v.d = u.d + 1
-	16.          v.π = u
-	17.          ENQUEUE(Q,v)              // v is now on the frontier
-	18.    u.color = BLACK                 // u is now behind the frontier
+	1  for each vertex u ∈ G.V - {s}
+	2     u.color == WHITE
+	3     u.d = ∞
+	4     u.π = NIL
+	5  s.color = GRAY
+	6  s.d = 0
+	7  s.π = NIL
+	8  Q = ∅
+	9  ENQUEUE(Q,s)
+	10 while Q ≠ ∅
+	11    u = DEQUEUE(Q)
+	12    for each vertex v in G.Adj[u]   // search the neighbors of u
+	13       if v.color == WHITE          // is v being discovered now?
+	14          v.color = GRAY
+	15          v.d = u.d + 1
+	16          v.π = u
+	17          ENQUEUE(Q,v)              // v is now on the frontier
+	18    u.color = BLACK                 // u is now behind the frontier
 
 Basically the algorithm performs the following operations:
 
