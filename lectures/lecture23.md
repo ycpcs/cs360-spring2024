@@ -43,21 +43,20 @@ Thus we can represent the optimal values (when *k* = *n*) in a matrix as
 Basically the algorithm works by repeatedly exploring paths between every pair using each vertex as an intermediate vertex.
 
 <pre>
-	FLOYD-WARSHALL(W)
-	1.  n = W.rows
-	2.  D<sup>(0)</sup> = W
-	3.  Π<sup>(0)</sup> = π<sup>(0)</sup><sub>ij</sub> = NIL if i = j or w<sub>ij</sub> = ∞
+	FLOYD-WARSHALL(W,n)
+	1  D<sup>(0)</sup> = W
+	2  Π<sup>(0)</sup> = π<sup>(0)</sup><sub>ij</sub> = NIL if i = j or w<sub>ij</sub> = ∞
 	                 = i   if i ≠ j and w<sub>ij</sub> &lt; ∞
-	4.  for k = 1 to n
-	5.     let D<sup>(k)</sup> = (d<sup>(k)</sup><sub>ij</sub>) be a new <i>n</i> x <i>n</i> matrix
-	6.     for i = 1 to n
-	7.        for j = 1 to n
-	8.           d<sup>k</sup><sub>ij</sub> = min(d<sup>(k-1)</sup><sub>ij</sub>, d<sup>(k-1)</sup><sub>ik</sub> + d<sup>(k-1)</sup><sub>kj</sub>)
-	9.           if d<sup>(k-1)</sup><sub>ij</sub> &le; d<sup>(k-1)</sup><sub>ik</sub> + d<sup>(k-1)</sup><sub>kj</sub>
-	10.             π<sup>(k)</sup><sub>ij</sub> = π<sup>(k-1)</sup><sub>ij</sub>
-	11.          else
-	12.             π<sup>(k)</sup><sub>ij</sub> = π<sup>(k-1)</sup><sub>kj</sub>
-	13. return D<sup>(n)</sup>
+	3  for k = 1 to n
+	4     let D<sup>(k)</sup> = (d<sup>(k)</sup><sub>ij</sub>) be a new <i>n</i> x <i>n</i> matrix
+	5     for i = 1 to n
+	6        for j = 1 to n
+	7           d<sup>k</sup><sub>ij</sub> = min(d<sup>(k-1)</sup><sub>ij</sub>, d<sup>(k-1)</sup><sub>ik</sub> + d<sup>(k-1)</sup><sub>kj</sub>)
+	8           if d<sup>(k-1)</sup><sub>ij</sub> &le; d<sup>(k-1)</sup><sub>ik</sub> + d<sup>(k-1)</sup><sub>kj</sub>
+	9              π<sup>(k)</sup><sub>ij</sub> = π<sup>(k-1)</sup><sub>ij</sub>
+	10          else
+	11             π<sup>(k)</sup><sub>ij</sub> = π<sup>(k-1)</sup><sub>kj</sub>
+	12 return D<sup>(n)</sup>
 </pre>
 
 Since Floyd-Warshall is simply three (tight) nested loops, the run time is clearly O(*V*<sup>3</sup>).
