@@ -44,15 +44,16 @@ A simple way to implement the generic algorithm is to grow the MST by adding edg
 **Algorithm**
 
 	MST-KRUSKAL(G,w)
-	1.  A = ∅
-	2.  for each vertex v ∈ G.V
-	3.     MAKE-SET(v)
-	4.  sort the edges of G.E into nondecreasing order by weight w
-	5.  for each edge (u,v) ∈ G.E, taken in nondecreasing order by weight
-	6.     if FIND-SET(u) ≠ FIND-SET(v)
-	7.        A = A ∪ {(u,v)}
-	8.        UNION(u,v)
-	9.  return A
+	1  A = ∅
+	2  for each vertex v ∈ G.V
+	3     MAKE-SET(v)
+	4   make a single list of the edges in G.E
+	5   sort the list of edges into monotonically increasing order by weight w
+	6   for each edge (u,v) taken from the sorted list in order
+	7      if FIND-SET(u) ≠ FIND-SET(v)
+	8         A = A ∪ {(u,v)}
+	9         UNION(u,v)
+	10  return A
 
 Basically the algorithm works as follows:
 
