@@ -13,17 +13,20 @@ Prim's Algorithm
 **Algorithm**
 
 	MST-PRIM(G,w,r)
-	1.  for each u ∈ G.V
-	2.     u.key = ∞
-	3.     u.pi = NIL
-	4.  r.key = 0
-	5.  Q = G.V
-	6.  while Q ≠ ∅
-	7.     u = EXTRACT-MIN(Q)
-	8.     for each v ∈ G.Adj[u]
-	9.        if v ∈ Q and w(u,v) < v.key
-	10.          v.pi = u
-	11.          v.key = w(u,v)
+	1  for each vertex u ∈ G.V
+	2     u.key = ∞
+	3     u.π = NIL
+	4  r.key = 0
+	5  Q = ∅
+	6  for each vertex u ∈ G.V
+	7     INSERT(Q,u)
+	8  while Q ≠ ∅
+	9     u = EXTRACT-MIN(Q)              // add u to the tree
+	10    for each vertex v in G.Adj[u]   // update keys of u's non-tree neighbors
+	11       if v ∈ Q and w(u,v) < v.key
+	12          v.π = u
+	13          v.key = w(u,v)
+	14          DECREASE-KEY(Q,v,w(u,v))
 
 Basically the algorithm works as follows:
 
