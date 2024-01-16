@@ -35,31 +35,41 @@ Consider the following flow network
 
 > ![image](images/lecture25/MaxFlowexample.png)
 
-Initially we will remove the anti-parallel edges between vertices 1 and 2 by adding an intermediate vertex 1' and edges with the same capacities, i.e. *c*(1,1') = *c*(1',2) = *c*(1,2) = 10.
+Initially we will remove the anti-parallel edges between vertices 1 and 2 by adding an intermediate vertex 1' and edges with the same capacities, i.e. *c*(1,1') = *c*(1',2) = *c*(1,2) = 8.
 
 > ![image](images/lecture25/MaxFlowexampleMod.png)
 
-Note that clearly \|*f* <sup>\*</sup>\| ≤ 24 (the smaller of the capacities leaving the source or entering the sink).
+Note that clearly \|*f* <sup>\*</sup>\| ≤ 29 (the smaller of the capacities leaving the source or entering the sink).
 
-*Iteration 1:* Choose the augmenting path *p*<sub>1</sub> = \< *s*, 1, 3, *t* \> which has *c*<sub>f</sub>(*p*<sub>1</sub>) = 12 (due to *c*(1,3)) giving the residual network
+*Iteration 1:* Choose the augmenting path *p*<sub>1</sub> = \< *s*, 1, *t* \> which has *c*<sub>f</sub>(*p*<sub>1</sub>) = 5 (due to *c*(1,*t*)) giving \|*f*\| = 5 and the residual network
 
 > ![image](images/lecture25/MaxFlowexample1.png)
 
-*Iteration 2:* Choose the augmenting path *p*<sub>2</sub> = \< *s*, 2, 4, *t* \> which has *c*<sub>f</sub>(*p*<sub>2</sub>) = 4 (due to *c*(4,*t*)) giving the residual network
+(note the addition of edges (1,*s*) and (*t*,1) with *c*<sub>f</sub> = 5).
+
+*Iteration 2:* Choose the augmenting path *p*<sub>2</sub> = \< *s*, 1, 3, *t* \> which has *c*<sub>f</sub>(*p*<sub>2</sub>) = 7 (due to *c*(1,3)) giving \|*f*\| = 12 and the residual network
 
 > ![image](images/lecture25/MaxFlowexample2.png)
 
-*Iteration 3:* Choose the augmenting path *p*<sub>3</sub> = \< *s*, 2, 4, 3, *t* \> which has *c*<sub>f</sub>(*p*<sub>3</sub>) = 7 (due to *c*(4,3)) giving the residual network
+*Iteration 3:* Choose the augmenting path *p*<sub>3</sub> = \< *s*, 2, 3, *t* \> which has *c*<sub>f</sub>(*p*<sub>3</sub>) = 6 (due to *c*(2,3)) giving \|*f*\| = 18 and the residual network
 
 > ![image](images/lecture25/MaxFlowexample3.png)
 
-At this point there are no other augmenting paths (since vertex 3 is the only vertex with additional capacity to the sink but has no flow in from other vertices). Hence the final flow network with a min-cut shown is
+*Iteration 4:* Choose the augmenting path *p*<sub>4</sub> = \< *s*, 2, 4, *t* \> which has *c*<sub>f</sub>(*p*<sub>4</sub>) = 9 (due to *c*(*s*,2)) giving \|*f*\| = 27 and the residual network
 
 > ![image](images/lecture25/MaxFlowexample4.png)
 
-with maximal flow \|*f* <sup>\*</sup>\| = 19 + 4 = 23 (or 12 + 11 = 23).
+*Iteration 5:* Choose the augmenting path *p*<sub>5</sub> = \< *s*, 1, 1', 2, 4, *t* \> which has *c*<sub>f</sub>(*p*<sub>5</sub>) = 1 (due to *c*(2,4)) giving \|*f*\| = 28 and the residual network
 
-**Note** As we admit flow along an edge (*u*,*v*), we create *negative* flow along the reverse edge (*v*,*u*), i.e. the flow provides capacity for that edge.
+> ![image](images/lecture25/MaxFlowexample5.png)
+
+At this point there are no other augmenting paths. Hence the final flow network with a min-cut shown is
+
+> ![image](images/lecture25/MaxFlowexampleCut.png)
+
+with maximal flow \|*f* <sup>\*</sup>\| = 28.
+
+**Note** As we admit flow along an edge (*u*,*v*), we add or increase flow along the reverse edge (*v*,*u*), i.e. the flow provides capacity for that edge.
 
 Consider the following example
 
