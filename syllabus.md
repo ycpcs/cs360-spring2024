@@ -15,7 +15,7 @@ Instructor:
 
 > Section(s) | Instructor | Office hours
 > ---------- | ---------- | ------------
-> 101 (9:00-9:50AM KEC119) | David Babcock <dbabcock@ycp.edu> KEC 117 | or by appointment
+> 101 (9:00-9:50AM KEC119) | David Babcock <dbabcock@ycp.edu> KEC 117 | M 1-3pm, T 2-3pm, W 1-2pm, R 9:30-11am, or by appointment
 > 102 (8:00-8:50AM KEC119) | Dean Zeller, <dzeller@ycp.edu> KEC136 | or by appointment
 
 Course Description
