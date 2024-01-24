@@ -7,21 +7,16 @@ title: "Syllabus"
 
 <div id="subtitle">Analysis of Algorithms</div>
 
-**Spring 2023**
+**Spring 2024**
 
 Instructor: 
 - 101 (9:00am) - Dr. David Babcock, <dbabcock@ycp.edu>
 - 102 (8:00am) - Prof. Dean Zeller, <dzeller@ycp.edu>
 
-Office Hours:
-- **Dr. Babcock** - KEC 117A: TBD, or by appointment
-
-- **Prof. Zeller** - KEC136: TBD, or by appointment
-
- Section  | Days |  Time       | Room    | Final Presentations
- -------- | ---- |  ---------- | ------- | ----------
-101       | MWF  | 9:00-9:50   | KEC 119 | Wed, May 8, 8:00-10:00am
-102       | MWF  | 8:00-8:50   | KEC 119 | Mon, May 6, 8:00-10:00am
+> Section(s) | Instructor | Office hours
+> ---------- | ---------- | ------------
+> 101 (9:00-9:50AM KEC119) | David Babcock <dbabcock@ycp.edu> KEC 117 | or by appointment
+> 102 (8:00-8:50AM KEC119) | Dean Zeller, <dzeller@ycp.edu> KEC136 | or by appointment
 
 Course Description
 ------------------
@@ -155,34 +150,39 @@ I reserve the right to enforce this code through the York College Code of Studen
 
 ### Academic Integrity Policy (Philosophy Statement)
 
-York College of Pennsylvania, as an institution of higher education, serves to promote and sustain the creation, acquisition, and dissemination of knowledge. In order to fulfill this purpose, an environment of integrity, dependability and honesty must be maintained by all members of the York College community. Without a foundation based on intellectual honesty and integrity, the very ability to uphold the academic endeavors that York College strives to pursue is inhibited. The Spartan Oath embodies the expectation that all members of the York College community foster an environment of integrity and responsibility. Recognize that adhering to an ethical standard of honesty leads to professional, mature and responsible citizens, and enables society at large to trust our scholarship, research, and conferred degrees. Thus, each member of the York College community must be truthful, honest, personally and professionally responsible, and respect the intellectual contributions of others.
+For the full policy, go the the Academic Standards section of the current Course Catalog [https://www.ycp.edu/about-us/offices-and-departments/registrar/catalogs/](https://www.ycp.edu/about-us/offices-and-departments/registrar/catalogs/).
 
-The following policy pertains to all graded work in this course:
+York College of Pennsylvania, as an institution of higher education, serves to promote and sustain the creation, acquisition, and dissemination of knowledge.  In order to fulfill this purpose, an environment of integrity, dependability and honesty must be maintained by all members of the York College community.  Without a foundation based on intellectual honesty and integrity, the very ability to uphold the academic endeavors that York College strives to pursue is inhibited.
+  
+Academic integrity involves two fundamental expectations:
 
-> All graded (individual) assignments are to be completed individually. I encourage you to discuss high level concepts with other students, but any work you submit **must be yours alone**.
->
-> Direct copying of solutions or work from other students, web sites, or other sources **is absolutely forbidden under any circumstances**.
->
-> Any sources (books, websites, articles, fellow students, etc.), except for the course textbook and lecture notes, that you consult in completing an assignment **must be properly acknowledged**. In general, I strongly discourage you from using any resource not explicitly listed in the course syllabus or on the course web page but rather asking the instructor for assistance.
->
-> **Exams must be completed individually using only the resources from the course.**
+-   Anything you turn in as your own work is, in fact, your own work and your own words, completed without assistance, unless your instructor has given explicit permission otherwise.
+-   Anything you turn in is truthful.  Lab data were generated in the lab (and not made up), hours worked for an internship or coop were actually worked, etc.
 
-You may work with other students on labs. However, we do expect you to complete and submit them, and they count towards your participation grade: see "Lab Policy" below.
+YCP’s academic integrity policy includes a non-exhaustive list of activities that are prohibited.  Some of the commonly encountered prohibited activities include:
 
-#### Definition of Academic Dishonesty
+-   Plagiarism (passing someone else’s words or ideas off as one’s own without proper attribution).
+-   Getting assistance from other students on non-collaborative assignments.  You are permitted (and encouraged) to get assistance from your instructor and the Academic Success Center.
+-   Sharing papers, exams, homework assignments, etc. with other students (even if it wasn’t your intent to cheat).
+-   Ghostwriting (getting someone else to write a paper/assignment, whether it is a friend, an essay mill, or a generative AI tool).
+-   Using unauthorized assistance on exams (e.g., cheat sheets, websites, publisher test banks, other students).
+-   Buying/sourcing assignment answers from other people (whether it is other students, a website like Chegg, or other online sources).
+-   Turning in papers/assignments completed in other classes.  
 
-Engaging in academic dishonesty is a violation of the school’s academic integrity policy and is not tolerated at York College. Examples of academic dishonesty include, but are not limited to, cheating on assignments or examinations, plagiarism (i.e. passing someone else’s words or ideas off as one’s own without proper attribution), improper paraphrasing, fabricating research, falsifying academic documents, handing in material completed for another course, and submitting work not done independently (unless part of an explicitly collaborative project).
+This is not a complete list of prohibited activities.  Check out the policy in the catalog for a more comprehensive list.  The onus is on you, the student, to verify that any exceptions are allowed in this class by your instructor.
 
-#### Academic Integrity Procedure – Reporting
+Instructors have full discretion to assign a sanction up to and including a grade of 0 in the class for violations of the policy.  Violations will be reported to the Associate Provost of Student Success as outlined in the policy.  You cannot withdraw from a class if you have been charged with an academic integrity violation.
+  
+If at any point you are unsure whether something is allowed under the academic integrity policy, please ask your instructor!
 
--   When a faculty member believes a student has violated the Academic Integrity Policy, the faculty member is encouraged to discuss the incident in person with the student promptly, identifying the sanction he or she is going to apply. The faculty member should then reiterate the charge and sanction in writing to the student.
--   The faculty member has full discretion to determine a suitable sanction, such as a “0” on the assignment in question, up to a course grade of “0”. In the case of an egregious first offense, the faculty member may request that the Student Welfare Committee conduct a hearing and determine a sanction, which may involve academic probation, suspension, or dismissal from the College.
--   The faculty member has ten days from the written notification to the student to report the incident to the Department Chair and Associate Provost of Academic Services. The faculty member must submit as part of the report: 1) a detailed description of the incident, 2) a course syllabus, 3) an assignment sheet or assignment instructions, 4) the assignment in question, and 5) supporting documentation, such as copied material. The documentation will be kept on file in the student’s permanent record.
--   Students cannot withdraw from a course in which they have been accused of academic dishonesty, until the accusation is withdrawn by the faculty member, or is overturned by the Student Welfare Committee or the Associate Provost of Academic Services. Academic Integrity Procedure – Appeals
--   Students who believe they have been unjustly charged or sanctioned have ten days after receiving written notification from their instructor regarding the incident to file an appeal with the Student Welfare Committee by submitting a formal letter to the Associate Provost of Academic Services.
--   If an appeal is filed, the Student Welfare Committee will schedule a hearing which includes inviting the student and faculty member to attend to provide additional information or clarity regarding the incident. The Student Welfare Committee will then review the charge and/or sanction.
--   If the Associate Provost of Academic Services determines that the incident of academic dishonesty is the student’s second or subsequent offense, he or she will provide written documentation to the student, faculty member, and Department Chair. The Student Welfare Committee will automatically conduct a hearing to review the charge and decide on an appropriate sanction: academic probation, suspension or dismissal from the College.
--   Academic Services will receive written notification of the Student Welfare Committee’s decision. Students who are unsatisfied with the decision may submit a second and final written appeal to the Associate Provost of Academic Services within 72 hours of receiving notification of the Student Welfare Committee’s decision. All decisions made by the Associate Provost of Academic Services will be final.
+#### Instructor's policy
+
+The following policy pertains specifically to all graded work in this course:
+
+-   All graded (individual) assignments are to be completed individually. I encourage you to discuss high level concepts with other students, but any work you submit **must be yours alone**.
+-   Direct copying of solutions or work from other students, web sites, or other sources **is absolutely forbidden under any circumstances**.
+-   Any sources (books, websites, articles, fellow students, etc.), except for the course textbook and lecture notes, that you consult in completing an assignment **must be properly acknowledged**. In general, I strongly discourage you from using any resource not explicitly listed in the course syllabus or on the course web page but rather asking the instructor for assistance.
+-   **Exams must be completed individually using only the resources from the course.**
 
 ### Use of Personal Technology in the Classroom
 
@@ -194,7 +194,9 @@ York College recognizes the importance of effective communication in all discipl
 
 ### Student Accessibility Services
 
-In accordance with the provisions of Section 504 of the Rehabilitation Act of 1973, and the Americans with Disabilities Act of 1990, York College and its faculty are obliged to make reasonable classroom and physical accommodations for students with disabilities.  If you are a student with a disability in need of classroom accommodations and have not already registered with Student Accessibility Services, please see the [SAS webpage](https://www.ycp.edu/about-us/offices-and-departments/student-success/student-accessibility-services/) for more information and to complete the online form to apply for accommodations. You may also contact <sas@ycp.edu> to establish the accommodations for which you are eligible.
+York College of Pennsylvania offers a variety of academic accommodations to students with documented disabilities to ensure their success. To request accommodations, please contact Student Accessibility Services at (717)-815-1717 or <sas@ycp.edu>. Student Accessibility Services will discuss the confidential process of requesting accessibility services and establish the accommodations for which the student is eligible.
+
+There is a possibility that during this course, classroom lectures may be recorded in accordance with York College of Pennsylvania policies for Student Accessibility Services.
 
 ### Disclaimer
 
