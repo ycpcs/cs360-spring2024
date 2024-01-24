@@ -14,15 +14,15 @@ courseInfo.classPeriods = [
 		reading: "Ch. 2.1&ndash;2.2",
 	},
 	{
-		topic: new Topic("Lecture 2b: Empirical Analysis", "lectures/lecture02b.html"),
+		topic: new DoubleTopic("Lecture 2b: Empirical Analysis", "lectures/lecture02b.html", "Assignment 0 Due", "assign/assign00.html"),
 		reading: "Ch. 3",
 	},
 	{
-		topic: new DoubleTopic("Lecture 3: Asymptotic Notation", "lectures/lecture03.html", "Assignment 1 Due", "assign/assign01.html"),
+		topic: new Topic("Lecture 3: Asymptotic Notation", "lectures/lecture03.html", "Assignment 1 Due", "assign/assign01.html"),
 		reading: "Ch. 3",
 	},
 	{
-		topic: new DoubleTopic("Lecture 4: Merge Sort", "lectures/lecture04.html", "Merge Sort Pseudocode", "handouts/lecture04-mergealg.pdf"),
+		topic: new TripleTopic("Lecture 4: Merge Sort", "lectures/lecture04.html", "Merge Sort Pseudocode", "handouts/lecture04-mergealg.pdf", "Assignment 1 Due", "assign/assign01.html"),
 		reading: "Ch. 2.3",
 	},
 	{
