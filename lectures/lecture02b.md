@@ -109,7 +109,7 @@ Given that the asymptotic behavior for bubble sort is O(n<sup>2</sup>), we wish 
 > 32                  |1312                |1325                |1331.2              |
 > 64                  |5092                |5164                |5324.8              |
 > 128                 |20513               |20598               |21299.2             |
-> 256                 |81858               |81455              |85196.8             |
+> 256                 |81858               |81455               |85196.8             |
 > 512                 |325107              |328957              |340787.2            |
 > 1024                |1313036             |1311527             |1363148.8           |
 > 2048                |5250859             |5235204             |5452595.2           |
@@ -120,6 +120,12 @@ Given that the asymptotic behavior for bubble sort is O(n<sup>2</sup>), we wish 
 
 > ![image](images/lecture02b/bubblegraph.png)
 
+Zooming in
+----------
 
+From the above plot, we can investigate additional properties by adjusting the x and y axis ranges to see details of the data. For example, we may wish to see how well the asymptotic curve fits small data set sizes where lower order terms may be significant. The key is to adjust *both* ranges such that the plot fills the majority of the plot area. In the figure below, the x axis has been adjusted to the range [0->500] and the y axis to the range [0->160000]. Based on this plot, it appears that bubble sort's O(n<sup>2</sup>) bound approximates the behavior reasonably well even for small data sets (which looking at the data in the table would also confirm).
+
+ > ![image](images/lecture02b/bubblegraph-small.png)
+ 
 
 
