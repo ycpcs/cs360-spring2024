@@ -58,7 +58,7 @@ Once the data for all input sizes and both ranges and element ranges have been g
 > -   Show the *best fit* asymptotic **curves** for **cn**<sup>2</sup> appropriate for the sort. Determine an *approximate* value of **c** (to the nearest 0.5) for each element range that fits the actual data relatively well. (Hint: Simply manually choose values for each **c** and plot the corresponding asymptotic curve until it fits the data *reasonably* well, i.e. you do not need to mathematically find the "best-fit" values.)
 > -   Create a second plot to illustrate and discuss how well the asymptotic curve fits the data for *small* data set sizes (*n* < 512) for both element ranges
 
-**Hint:** To plot **cn**<sup>2</sup>, consider making another column in the spreadsheet that *computes* **cn**<sup>2</sup> for each input size *n*. Then plot the empirical data as **points** (with no lines) and the computed values as a **curve** without points. Then adjust the axis ranges to observe the small data set size behavior. Refer to [Lecture 2b](../lectures/lecture2b.html) for examples of the graphs.
+**Hint:** To plot **cn**<sup>2</sup>, consider making another column in the spreadsheet that *computes* **cn**<sup>2</sup> for each input size *n*. Then plot the empirical data as **points** (with no lines) and the computed values as a **curve** without points. Then adjust the axis ranges to observe the small data set size behavior. Refer to [Lecture 2b](../lectures/lecture02b.html) for examples of the graphs.
 
 *Insertion Sort*
 
