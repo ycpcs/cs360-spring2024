@@ -60,6 +60,8 @@ Once the data for all input sizes and both ranges and element ranges have been g
 
 > -   Plot number of inputs *n* vs. empirical average runtimes as **data points** for both element ranges
 > -   Show the *best fit* asymptotic **curves** for **cn lg n** appropriate for the sort. Determine an *approximate* value of **c** (to the nearest 0.5) for each element range that fits the actual data relatively well. (Hint: Simply manually choose values for each **c** and plot the corresponding asymptotic curve until it fits the data *reasonably* well, i.e. you do not need to mathematically find the "best-fit" values.)
+> -   Create a second plot to illustrate and discuss how well the asymptotic curve fits the data for *small* data set sizes (*n* < 512) for both element ranges
+> -   Create a third plot showing *both* insertion sort and merge sort on the same axes and determine for which range is each sort faster, i.e. where is the crossover point. **Note** you may need to adjust the axis ranges to highlight your conclusions. 
 
 **Hint:** To plot **cn lg n**, consider making another column in the spreadsheet that *computes* **cn lg n** for each input size *n*. Then plot the empirical data as **points** (with no lines) and the computed values as a **curve** without points.
 

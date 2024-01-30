@@ -50,8 +50,10 @@ Also change **\#define NUM\_AVG** to 10 to compute an *average* runtime for 10 r
 
 Once the data for all input sizes and both ranges and element ranges have been generated, the program will produce a comma separated table of output in the console and a corresponding **output.csv** file in the **bin** subdirectory. Use this data to make a *meaningful* plot (e.g. using Excel) of the data showing *important* characteristics. In particular:
 
-> -   Plot number of inputs *n* vs. empirical average runtimes as **data points** for both element ranges
+> -   *For each sort*, plot number of inputs *n* vs. empirical average runtimes as **data points** for both element ranges
 > -   Show the *best fit* asymptotic **curve** for **cn lg n** for heap and quick sort, and **cn + k** for counting sort appropriate for the sort. Determine an *approximate* value of **c** (to the nearest 0.5) and  **k** for each sort that fits the actual data relatively well. (Hint: Simply manually choose values for each **c** and plot the corresponding asymptotic curve until it fits the data *reasonably* well, i.e. you do not need to mathematically find the "best-fit" values. **k** is simply a y offset, so select **c** to match the slope and then adjust **k** to vertically adjust the curve.)
+> -   Create a plot for each sort to illustrate and discuss how well the asymptotic curve fits the data for *small* data set sizes (*n* < 512) for both element ranges
+> -   Create additional plots showing *all three* sorts on the same axes and determine for which range is each sort faster, i.e. where is the crossover point. **Note** you may need to adjust the axis ranges to highlight your conclusions and make separate plots for the different element ranges.
 
 **Hint:** To plot **cn lg n** and **cn + k**, consider making another column in the spreadsheet that *computes* **cn lg n** and **cn + k** for each input size *n*. Then plot the empirical data as **points** (with no lines) and the computed values as a **curve** without points.
 
