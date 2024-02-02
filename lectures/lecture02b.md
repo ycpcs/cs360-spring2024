@@ -68,7 +68,7 @@ Note that even though the exchange takes *three* lines of C code, we only count 
 Data Collection
 ===============
 
-Once the implementation is verified to be working, data can be generated for random inputs of various sizes and/or element ranges. For example, a table of output data for the bubble sort implementation where the first column represents the input *size*, i.e. number of elements in the input array, the second column is the average counts when run on arrays with elements in the small range [1->1024], and the third column is the average counts when run on arrays with elements in the large range [1->32768].
+Once the implementation is verified to be working, data can be generated for random inputs of various sizes and/or element ranges. For example, a table of output data for the bubble sort implementation where the first column represents the input *size*, i.e. number of elements in the input array, the second column is the average counts when run on arrays with elements in the small range [1->1024], and the third column is the average counts when run on arrays with elements in the large range [1->32768]. Here is a sample csv file containing the data [BubbleData.csv](images/lecture02b/BubbleData.csv) which can be imported into Excel (or other spreadsheet program) 
 
 > n                   |Bubble-1024         |Bubble-32768         |
 > --------------------|--------------------|--------------------|
