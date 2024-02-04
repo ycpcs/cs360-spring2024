@@ -215,5 +215,5 @@ Intuitively, asymptotic notation can be thought of as "relational operators" for
 >
 > \> ⇒ ω()
 
-Review properties of exponentials (pg. 55 of CLRS), logarithms (pg. 56 of CLRS), and summations (Appendix A of CLRS).
+Review properties of exponentials (pg. 65 of CLRS), logarithms (pg. 66 of CLRS), and summations (Appendix A of CLRS).
 
