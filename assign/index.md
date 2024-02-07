@@ -15,7 +15,7 @@ All problems (unless otherwise noted) are from the course textbook:
 
 > Due Date |                Assignment                                | Solutions                                               |
 > -------- | -------------------------------------------------------- | ------------------------------------------------------- |
-> Feb 2    | [Assignment 0](../assign/assign00.html)                  |  |
+> Feb 2    | [Assignment 0](../assign/assign00.html)                  | [Assignment 1 Solutions](../assign/sol/assign01sol.pdf) |
 > Feb 7    | [Assignment 1](../assign/assign01.html)                  |  |
 > Feb 14   | [Assignment 2](../assign/assign02.html)                  |  |
 > Mar 4    | [Assignment 3](../assign/assign03.html)                   |  |
