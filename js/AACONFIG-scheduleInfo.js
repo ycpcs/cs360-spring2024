@@ -30,7 +30,7 @@ courseInfo.classPeriods = [
 		reading: "Ch. 4.5",
 	},
 	{
-		topic: new Topic("Lecture 5: Master Theorem cont.", "lectures/lecture05.html"),
+		topic: new DoubleTopic("Lecture 5: Master Theorem cont.", "lectures/lecture05.html", "Master Theorem Practice Activity", "handouts/lecture05-masteract.pdf", "Master Theorem Solution", "handouts/lecture05-masteract-sol.pdf"),
 		reading: "Ch. 4.5",
 	},
 	{
