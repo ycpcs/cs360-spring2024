@@ -10,7 +10,7 @@ Book Questions from *Introduction to Algorithms - 4th ed.*
 
 2.3-6 (recursively)
 
-3-2 (with *brief* justifications for *each* row - 10 points)
+3-2 (with *brief* justifications for *each* row)
 
 4.5-1 (b,d), 4.5-2, 4-1 (b,c,f)
 
@@ -20,11 +20,11 @@ Implementation - Merge sort
 
 > 2.3-6 - Be sure to give a *recursive* algorithm and the corresponding recursive equation. Then solve the equation via Master theorem.
 >
-> 3-2 - Refer to the properties of logs and exponentials in section 3.2, particularly eq. 3.16, 3.19, and the following properties
+> 3-2 - Refer to the properties of logs and exponentials in section 3.3, particularly eq. 3.21, 3.28, and the following properties
 >
-> *n<sup>b</sup> = o(a<sup>n</sup>)*
+> *n<sup>b</sup> = o(a<sup>n</sup>)*  (eq. 3.13)
 >
-> *lg<sup>b</sup>n = o(n<sup>a</sup>)*
+> *lg<sup>b</sup>n = o(n<sup>a</sup>)*   (eq. 3.24)
 >
 > i.e. polynomials are bounded by exponentials and logarithms are bounded by polynomials.
 >
