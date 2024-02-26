@@ -19,7 +19,7 @@ The report should include *meaningful* plots (e.g. using Excel) of all the data 
 	
 **DISCUSS** the results in terms of observed behavior (e.g. how well does the asymptotic behavior match the empirical data), comparison of behaviors between sorts (e.g. which ones perform better at which data set sizes), comparison of hidden constants for sorts with the same asymptotic behaviors, and any other important observed features. The discussion should refer to the graphs when appropriate to illustrate each aspect. 
 
-*Algorithms*
+### Algorithms
 
 Provide the individual sort graphs you generated in assignments 1-3 and discuss for each algorithm:
 
@@ -27,7 +27,7 @@ Provide the individual sort graphs you generated in assignments 1-3 and discuss 
 
 >-   Does the empirical data for each sort fit the asymptotic trend curve relatively well for *small* data sets? If not, briefly explain why you think there is a deviation from the asymptotic trend for small data set sizes.
 
-*Small Range Comparison*
+### Small Range Comparison
 
 For all the algorithms, create appropriate graphs using the *small element range* data sets to highlight the following comparisons:
 
@@ -37,7 +37,7 @@ For all the algorithms, create appropriate graphs using the *small element range
 
 >-   For **just** the *n lg n* sorts, which are most efficient both in terms of runtime and memory usage? 
 
-*Large Range Comparison*
+### Large Range Comparison
 
 >-   Which sorts have the best runtime for *small* data sets, i.e. *small n*, i.e. which sorts are most efficient for different (small) *n*?
 
@@ -46,11 +46,11 @@ For all the algorithms, create appropriate graphs using the *small element range
 
 >-   For **just** the *n lg n* sorts, which are most efficient both in terms of runtime and memory usage? 
 
-*Conclusion*
+### Conclusion
 
 **SUMMARIZE** the results by describing under what conditions you would select different sorts, i.e. if you were asked to sort a data set, what criteria would you use in making your selection?
 
-*Appendix*
+### Appendix
 
 There should be a summary table listing the sort method, asymptotic behavior, and empirical asymptotic formula with "best-fit" constants.
 
