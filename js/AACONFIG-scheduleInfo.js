@@ -96,23 +96,23 @@ courseInfo.classPeriods = [
 		reading: "Ch. 22.2",
 	},
 	{
-		topic: new SixTopic("Lecture 17: Depth-First Search", "lectures/lecture17.html", "DFS Pseudocode", "handouts/lecture17-dfsalg.pdf", "DFS Example", "handouts/lecture17-dfsex.pdf", "DFS Practice Activity", "handouts/lecture17-dfsact.pdf", "DFS Solution", "handouts/lecture17-dfsact-sol.pdf", "Assignment 4 Due", "assign/assign04.html"),
+		topic: new FiveTopic("Lecture 17: Depth-First Search", "lectures/lecture17.html", "DFS Pseudocode", "handouts/lecture17-dfsalg.pdf", "DFS Example", "handouts/lecture17-dfsex.pdf", "DFS Practice Activity", "handouts/lecture17-dfsact.pdf", "DFS Solution", "handouts/lecture17-dfsact-sol.pdf"),
 		reading: "Ch. 22.3"
 	},
 	{
-		topic: new FiveTopic("Lecture 18: DFS Applications", "lectures/lecture18.html", "DFS Application Pseudocode", "handouts/lecture18-dfsappalg.pdf", "DFS Application Examples", "handouts/lecture18-dfsappex.pdf", "DFS Application Practice Activity", "handouts/lecture18-dfsappact.pdf", "DFS Application Solution", "handouts/lecture18-dfsappact-sol.pdf"),
+		topic: new SixTopic("Lecture 18: DFS Applications", "lectures/lecture18.html", "DFS Application Pseudocode", "handouts/lecture18-dfsappalg.pdf", "DFS Application Examples", "handouts/lecture18-dfsappex.pdf", "DFS Application Practice Activity", "handouts/lecture18-dfsappact.pdf", "DFS Application Solution", "handouts/lecture18-dfsappact-sol.pdf", "Assignment 4 Due", "assign/assign04.html"),
 		reading: "Ch. 22.4&ndash;22.5",
+	},
+	{
+		topic: new FiveTopic("Lecture 19: Minimum Spanning Trees - Kruskal", "lectures/lecture19.html", "Kruskal Pseudocode", "handouts/lecture19-Kruskalalg.pdf", "Kruskal Example", "handouts/lecture19-Kruskalex.pdf", "Kruskal Practice Activity", "handouts/lecture19-Kruskalact.pdf", "Kruskal Solution", "handouts/lecture19-Kruskalactsol.pdf"),
+		reading: "Ch. 23.1",
 	},
 	{
 		topic: new DoubleTopic("Exam 3 Review", "", "Assignment 5 Due", "assign/assign05.html"),
 		reading: "",
 	},
 	{
-		topic: new Topic("** Exam 3 - Takehome Due Wed Apr 5", "")
-	},
-	{
-		topic: new FiveTopic("Lecture 19: Minimum Spanning Trees - Kruskal", "lectures/lecture19.html", "Kruskal Pseudocode", "handouts/lecture19-Kruskalalg.pdf", "Kruskal Example", "handouts/lecture19-Kruskalex.pdf", "Kruskal Practice Activity", "handouts/lecture19-Kruskalact.pdf", "Kruskal Solution", "handouts/lecture19-Kruskalactsol.pdf"),
-		reading: "Ch. 23.1",
+		topic: new Topic("** Exam 3 - Takehome Due Wed Apr 10", "")
 	},
 	{
 		topic: new FiveTopic("Lecture 20: Minimum Spanning Trees - Prim", "lectures/lecture20.html", "Prim Pseudocode", "handouts/lecture20-Primalg.pdf", "Prim Example", "handouts/lecture20-Primex.pdf","Prim Practice Activity", "handouts/lecture20-Primact.pdf", "Prim Solution", "handouts/lecture20-Primactsol.pdf"),
@@ -147,7 +147,7 @@ courseInfo.classPeriods = [
 		reading: "",
 	},
 	{
-		topic: new Topic("** Exam 4 - Takehome Due Fri May 5", "")
+		topic: new Topic("** Exam 4 - Takehome Due Fri May 3", "")
 	},
 	{
 		topic: new DoubleTopic("Lecture 28: More NP Complete Problems", "lectures/lecture28.html", "Vertex Cover and TSP Example", "handouts/lecture28-VerCovTSPex.pdf"),
