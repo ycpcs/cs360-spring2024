@@ -21,6 +21,7 @@ All problems (unless otherwise noted) are from the course textbook:
 > Mar 4    | [Assignment 3](../assign/assign03.html)                  | [Assignment 3 Solutions](../assign/sol/assign03sol.pdf) |
 > Mar 18   | [Empirical Comparison Report](../assign/emp_comp.html)   | **Upload .pdf to Canvas** |
 > Mar 25   | [Assignment 4](../assign/assign04.html)                  |  |
+> Apr 3    | [Assignment 5](../assign/assign05.html)                  |  |
 
 <!--
 > Mar 24   | [Assignment 4](../assign/assign04.html)                  |  |
