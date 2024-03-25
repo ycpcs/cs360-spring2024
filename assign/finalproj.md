@@ -31,7 +31,7 @@ The report should be 5-7 pages in length (double spaced) *including* figures but
 
 ### Oral Report
 
-To share what you have found with other students in the class, you will be required to give **a short** presentation regarding your topic ()*no more* than **5 minutes**.) You will not have time for PowerPoint slides, but the presentation should *briefly* describe:
+To share what you have found with other students in the class, you will be required to give **a short** presentation regarding your topic (*no more* than **5 minutes**.) You will not have time for PowerPoint slides, but the presentation should *briefly* describe:
 
 > -   The topic with relevant problem domains.
 > -   A *short* summary discussion of how it works.
